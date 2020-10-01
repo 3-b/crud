@@ -15,3 +15,21 @@ try{
     die("ERROR: Could not connect. " . $e->getMessage());
 }
 ?>
+
+// Another way to define in shorter way
+
+<?php
+$localhost = "localhost";
+$username = "root";
+$Password = "";
+$dbname = "demo";
+
+try{
+ $pdo = new PDO("mysqli:host=" .$localhost. ";dbname=" . $dbname,$username,$password);
+ // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $e){
+    die("ERROR: Could not connect. " . $e->getMessage());
+}
+
+?>
